@@ -1,0 +1,41 @@
+// object created statcially
+// cout << "HI" << endl;
+// cout << "hello" << endl;
+// static
+// Hero a;
+
+// a.setLevel('a');
+// a.setHealth(78);
+// cout << " a level is: " << a.level << endl;
+
+// cout << " a health is: " << a.getHealth() << endl;
+// // dyanmiically
+
+// Hero *b = new Hero;
+// b->setLevel('b');
+// b->setHealth(70);
+
+// cout << " b level is: " << b->level << endl;
+
+// cout << "b  health is: " << b->getHealth() << endl;
+
+//     Hero ramesh;
+
+//     cout << "size of ramesh is :" << sizeof(ramesh) << endl;
+//     // ramesh.getHealth() = 1;
+//     // usesettergetter
+//     ramesh.setHealth(70);
+//     ramesh.level = 'A';
+//     cout << "Ramesh health is: " << ramesh.getHealth() << endl;
+//     cout << "Health is: " << ramesh.getHealth() << endl;
+//     cout << "Level is: " << ramesh.level << endl;
+
+// staticallocation
+
+
+ // Hero ramesh(10);
+    // // cout << "address of ramesh is : " << &ramesh <, endl;
+    // ramesh.print();
+    // // dyanmically
+    // Hero *b = new Hero(11);
+    // Hero temp(22, 'a');

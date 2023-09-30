@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+const int MAX_INVENTORY_SIZE = 100;
+
+// Define a struct to represent a grocery item
+class GroceryItem
+{
+public:
+    string name;
+    double price;
+    int quantity;
+};
+
+// Function to add an item to the inventory
+void addItem(GroceryItem inventory[], int &itemCount, const string &name, double price, int quantity)
+{
+    for (int i = 0; i < itemCount; ++i)
+    {
+        if (inventory[i].name == name)
+        {
+            inventory[i].quantity += quantity;
+            return;
+        }
+    }
+
+    if (itemCount < MAX_INVENTORY_SIZE)
+    {
+        GroceryItem newItem = {name, price, quantity};
+        inventory[itemCount] = newItem;
+        itemCount++;
+    }
+    else
+    {
+        cout << "Inventory is full. Cannot add more items." << endl;
+    }
+}
+
+// Function to display the inventory
+void displayInventory(const GroceryItem inventory[], int itemCount)
+{
+    cout << "Inventory List:" << endl;
+    for (int i = 0; i < itemCount; ++i)
+    {
+        cout << inventory[i].name << " - Price: $" << inventory[i].price << " - Quantity: " << inventory[i].quantity << endl;
+    }
+}
+
+int main()
+{
+    GroceryItem inventory[MAX_INVENTORY_SIZE];
+    int itemCount = 0;
+
+    addItem(inventory, itemCount, "Apples", 0.5, 50);
+    addItem(inventory, itemCount, "Bananas", 0.3, 40);
+    addItem(inventory, itemCount, "Milk", 2.0, 20);
+    addItem(inventory, itemCount, "Chocos", 20, 50);
+    displayInventory(inventory, itemCount);
+
+    return 0;
+}

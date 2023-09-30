@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    background-color: black;
+    /* Set the background color of the entire body to black */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Ensure the container takes up at least the full viewport height */
+}
+
+.wrapper {
+    padding: 20px;
+    background-color: white;
+    /* Set the background color of the wrapper within the container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add a subtle shadow for the wrapper */
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+}
+
+.image:hover {
+    filter: grayscale();
+    transition-duration: 1s;
+    
+}
