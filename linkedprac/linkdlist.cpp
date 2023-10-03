@@ -77,6 +77,7 @@ int main()
             cout << "enter number" << endl;
             cin >> number;
             insertAtHead(head, number);
+            print(head);
             break;
         case 2:
 
