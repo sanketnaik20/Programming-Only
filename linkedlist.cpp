@@ -25,11 +25,13 @@ void insertionAttail(Node *&tail, int data)
 }
 void deletionAtHead(Node *&head)
 {
-Node *temp=head;
-if(head->next!=NULL)
-{
-    head=temp;
-}
+    Node *temp = head;
+    if (head == NULL)
+    {
+        cout << "list is empty" << endl;
+    }
+    head = temp->next;
+    delete temp;
 }
 void searchingNode(Node *&head, int target)
 {
@@ -72,6 +74,7 @@ int main()
     insertionAttail(tail, 52);
     insertionAttail(tail, 53);
     insertionAttail(tail, 50);
+    deletionAtHead(head);
     print(head);
     searchingNode(head, 51);
 }

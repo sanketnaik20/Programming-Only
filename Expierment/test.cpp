@@ -35,6 +35,7 @@ void insertion_sort(int a[], int size)
         }
     }
 }
+
 void merge(int arr[], int left, int middle, int right)
 {
     int n1 = middle - left + 1;
@@ -129,12 +130,12 @@ void countingSort(int arr[], int size, int place)
 
 void radixsort(int arr[], int size)
 {
-
     int max = getMax(arr, size);
 
     for (int place = 1; max / place > 0; place *= 10)
         countingSort(arr, size, place);
 }
+
 int partition(int arr[], int low, int high)
 {
     int pivot = arr[high];
@@ -165,78 +166,78 @@ void quicksort(int arr[], int low, int high)
 
 void print(int a[], int size)
 {
-    int i;
-    cout << "Now Sorted array Is:" << endl;
-    for (i = 0; i < size; i++)
+    cout << "Sorted array: ";
+    for (int i = 0; i < size; i++)
     {
-        cout << " " << a[i];
+        cout << a[i] << " ";
     }
-
     cout << endl;
 }
+
 int main()
 {
     int a[100], size, i, op;
-    while (1)
-    {
 
-        cout << "Enter Size of array" << endl;
+    while (true)
+    {
+        cout << "Enter the size of the array: ";
         cin >> size;
-        cout << "Enter elements of the array" << endl;
+
+        cout << "Enter elements of the array: ";
         for (i = 0; i < size; i++)
         {
             cin >> a[i];
         }
-        cout << "Array before Sorted is: " << endl;
+
+        cout << "Array before sorting: ";
         for (i = 0; i < size; i++)
         {
-            cout << " " << a[i];
+            cout << a[i] << " ";
         }
         cout << endl
-             << "Enter 1 to sort with Selection Sort" << endl
-             << "Enter 2 to sort with insertion Sort" << endl
-             << "Enter 3 to sort with Merge Sort" << endl
-             << "Enter 4 to sort with Radix Sort" << endl
-             << "Enter 5 to sort with Quick Sort" << endl
-             << "Enter 6 to Exit" << endl;
+             << endl;
+
+        cout << "Choose a sorting algorithm:" << endl;
+        cout << "1. Selection Sort" << endl;
+        cout << "2. Insertion Sort" << endl;
+        cout << "3. Merge Sort" << endl;
+        cout << "4. Radix Sort" << endl;
+        cout << "5. Quick Sort" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Enter your choice: ";
         cin >> op;
-        cout << endl;
 
         switch (op)
         {
         case 1:
-            cout << endl;
             selection_sort(a, size);
             print(a, size);
-            cout << endl;
             break;
         case 2:
-            cout << endl;
             insertion_sort(a, size);
             print(a, size);
-            cout << endl;
             break;
         case 3:
-            cout << endl;
             mergeSort(a, 0, size - 1);
             print(a, size);
-            cout << endl;
             break;
         case 4:
-            cout << endl;
             radixsort(a, size);
             print(a, size);
-            cout << endl;
             break;
-
         case 5:
-            cout << endl;
             quicksort(a, 0, size - 1);
             print(a, size);
-            cout << endl;
             break;
+        case 6:
+            return 0;
         default:
-            cout << "invalid option" << endl;
+            cout << "Invalid option!" << endl;
         }
+
+        cout << endl
+             << endl;
     }
+
+    return 0;
 }
